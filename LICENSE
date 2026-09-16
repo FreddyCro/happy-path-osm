@@ -1,0 +1,60 @@
+LICENSE — happy-path-osm
+========================
+
+這個 repo 裡有兩種東西，授權不同：**資料**與**文件**。
+
+--------------------------------------------------------------------------
+1. 資料：osm/<版本>/*.fgb
+--------------------------------------------------------------------------
+
+來源：OpenStreetMap（Geofabrik 台灣區域檔 taiwan-latest.osm.pbf，2026-09-14 下載）
+授權：Open Database License (ODbL) v1.0
+      https://opendatacommons.org/licenses/odbl/1-0/
+
+這七個 .fgb 檔是 OpenStreetMap 資料經過篩選、格式轉換後的**衍生資料庫**
+(Derivative Database)，依 ODbL 第 4.4 條，於此以 ODbL v1.0 釋出。
+
+  © OpenStreetMap contributors
+
+使用這些資料時：
+
+  * 必須標示上述出處。
+  * 若你散布這些資料的修改版（或以它為基礎的其他資料庫），必須同樣以 ODbL 釋出。
+  * 若你只是用它產生圖像、3D 場景等「Produced Work」，**只需標示出處**，
+    不必把你的程式或輸出以 ODbL 釋出。
+
+--------------------------------------------------------------------------
+2. 資料：osm/<版本>/tw.dem.bin.gz
+--------------------------------------------------------------------------
+
+來源：Copernicus DEM GLO-30 Public（AWS Open Data Registry）
+      https://registry.opendata.aws/copernicus-dem/
+授權：免費公開使用，須標示出處。**不是 ODbL**，沒有 share-alike 義務。
+
+必須逐字顯示的出處字串：
+
+  Copernicus DEM GLO-30 © DLR e.V. 2010-2014, © Airbus Defence and Space GmbH
+  2014-2018, provided under COPERNICUS by the European Union and ESA
+
+這個檔是上述來源經重取樣（3×3 像素取中位數 → 3 角秒網格）與格式轉換的產物，
+不含任何 OpenStreetMap 資料，因此不受 ODbL 約束。
+
+--------------------------------------------------------------------------
+3. 文件：README.md 與其他說明文字
+--------------------------------------------------------------------------
+
+CC0 1.0（公眾領域）。隨意取用，不必標示。
+https://creativecommons.org/publicdomain/zero/1.0/
+
+--------------------------------------------------------------------------
+摘要
+--------------------------------------------------------------------------
+
+顯示或散布用到本 repo 資料的作品時，至少要出現這兩段：
+
+  © OpenStreetMap contributors (ODbL)
+  Copernicus DEM GLO-30 © DLR e.V. 2010-2014, © Airbus Defence and Space GmbH
+  2014-2018, provided under COPERNICUS by the European Union and ESA
+
+兩段字串也存在 osm/<版本>/manifest.json 的 sources 欄位與 DEM 檔頭的
+attribution 欄位裡——消費端應該從那裡讀，不要自己拼。

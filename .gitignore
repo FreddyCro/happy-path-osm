@@ -1,0 +1,14 @@
+# 這個 repo 刻意「只有資料」——osm/<版本>/ 底下的檔案是要進 git 的，
+# 不要在這裡忽略它們（GitHub Pages 不支援 LFS，二進位必須直接進版本庫）。
+
+# 產生新版本時的暫存區（例如從 happy-path 複製過來前先放這裡比對）
+staging/
+*.tmp
+
+# OS / 編輯器
+.DS_Store
+Thumbs.db
+desktop.ini
+*.swp
+.vscode/
+.idea/

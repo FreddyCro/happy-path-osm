@@ -1,0 +1,3 @@
+# 圖資是二進位，不要做行尾轉換或 diff。Git LFS 刻意不用——GitHub Pages 不支援 LFS。
+*.fgb binary
+*.gz  binary

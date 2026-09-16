@@ -1,0 +1,140 @@
+{
+  "version": "2026-09",
+  "generatedAt": "2026-09-16T05:54:00.637Z",
+  "crs": "EPSG:4326",
+  "coverage": [
+    119.3,
+    21.9034,
+    122.0035,
+    25.4
+  ],
+  "files": {
+    "roads.fgb": {
+      "bytes": 11750592,
+      "sha256": "c24a9091135d2df9d84e3a5c613a3ef9488e988f712d1842f5d93e2a2f21f234",
+      "features": 43259,
+      "indexNodeSize": 16,
+      "crs": "EPSG:4326",
+      "envelope": [
+        118.223322,
+        21.903443,
+        122.003497,
+        26.235866
+      ]
+    },
+    "roads_major.fgb": {
+      "bytes": 2598512,
+      "sha256": "f364cc5657008f8ec119ebbf637e262f8452e9b7f71626b39dd98b5ece3af520",
+      "features": 11257,
+      "indexNodeSize": 16,
+      "crs": "EPSG:4326",
+      "envelope": [
+        120.085477,
+        22.44136,
+        121.827027,
+        25.181226
+      ]
+    },
+    "waterways.fgb": {
+      "bytes": 4441592,
+      "sha256": "a6192720bee8e2a5cf3ac56e71eb90a327b627bf0e267e1dbdb12de74d5c17c0",
+      "features": 8330,
+      "indexNodeSize": 16,
+      "crs": "EPSG:4326",
+      "envelope": [
+        117.783565,
+        21.931391,
+        122.005377,
+        26.218035
+      ]
+    },
+    "water.fgb": {
+      "bytes": 17440600,
+      "sha256": "62b58a3a398d63403335b261f15e865d538a8cfa998773e84243221d1f05effb",
+      "features": 58322,
+      "indexNodeSize": 16,
+      "crs": "EPSG:4326",
+      "envelope": [
+        118.161363,
+        21.904447,
+        122.004096,
+        26.377367
+      ]
+    },
+    "coastlines.fgb": {
+      "bytes": 1261632,
+      "sha256": "a7ca6c0900a707ac0f902893968a4f4dda438f96a6ca3a3c8282eae6d4015596",
+      "features": 1787,
+      "indexNodeSize": 16,
+      "crs": "EPSG:4326",
+      "envelope": [
+        118.122438,
+        21.758289,
+        122.10916,
+        26.383937
+      ]
+    },
+    "peaks.fgb": {
+      "bytes": 677112,
+      "sha256": "b1cdacdaa6f91630f4ae09207de10d459332f5268e485bc276941d3aa97f4a23",
+      "features": 5541,
+      "indexNodeSize": 16,
+      "crs": "EPSG:4326",
+      "envelope": [
+        118.162775,
+        21.918673,
+        122.105401,
+        26.378824
+      ]
+    },
+    "buildings.fgb": {
+      "bytes": 80945232,
+      "sha256": "0872e8844f01cb8986b7e7b7211c31bca50b651fc7e1741685b1d165a8611738",
+      "features": 590891,
+      "indexNodeSize": 16,
+      "crs": "EPSG:4326",
+      "envelope": [
+        118.122997,
+        21.899374,
+        122.083473,
+        26.382977
+      ]
+    },
+    "tw.dem.bin.gz": {
+      "bytes": 6490590,
+      "sha256": "a2937a7d72733620ae3d3936cb6fb553d521c59db0ce6bdbd07fb99cad640903",
+      "unpacked_bytes": 29030778,
+      "width": 3360,
+      "height": 4320,
+      "res_arcsec": 3,
+      "nodata": -32768,
+      "bbox": [
+        119.3,
+        21.8,
+        122.1,
+        25.4
+      ]
+    }
+  },
+  "sources": {
+    "osm": {
+      "file": "taiwan-260914.osm.pbf",
+      "origin": "https://download.geofabrik.de/asia/taiwan.html",
+      "license": "ODbL 1.0",
+      "attribution": "© OpenStreetMap contributors"
+    },
+    "dem": {
+      "name": "Copernicus DEM GLO-30 Public",
+      "origin": "https://registry.opendata.aws/copernicus-dem/",
+      "aggregate": "median",
+      "resArcsec": 3,
+      "attribution": "Copernicus DEM GLO-30 © DLR e.V. 2010-2014, © Airbus Defence and Space GmbH 2014-2018, provided under COPERNICUS by the European Union and ESA"
+    }
+  },
+  "pipeline": {
+    "pbf-to-intermediate": "soft-island/scripts/pbf-to-intermediate.mjs",
+    "to-geojsonseq": "fgb-poc/scripts/to-geojsonseq.mjs",
+    "to-fgb": "fgb-poc/scripts/to-fgb.mjs（gdal3.js 2.8.1 → ogr2ogr -f FlatGeobuf -lco SPATIAL_INDEX=YES）",
+    "dem-to-grid": "copernicus-glo30-median3@1"
+  }
+}
