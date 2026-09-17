@@ -1,6 +1,6 @@
 {
   "version": "2026-09",
-  "generatedAt": "2026-09-16T05:54:00.637Z",
+  "generatedAt": "2026-09-17T02:28:34.804Z",
   "crs": "EPSG:4326",
   "coverage": [
     119.3,
@@ -133,8 +133,8 @@
   },
   "pipeline": {
     "pbf-to-intermediate": "soft-island/scripts/pbf-to-intermediate.mjs",
-    "to-geojsonseq": "fgb-poc/scripts/to-geojsonseq.mjs",
-    "to-fgb": "fgb-poc/scripts/to-fgb.mjs（gdal3.js 2.8.1 → ogr2ogr -f FlatGeobuf -lco SPATIAL_INDEX=YES）",
+    "to-geojsonseq": "geodata/scripts/to-geojsonseq.mjs",
+    "to-fgb": "geodata/scripts/to-fgb.mjs（gdal3.js 2.8.1 → ogr2ogr -f FlatGeobuf -lco SPATIAL_INDEX=YES）",
     "dem-to-grid": "copernicus-glo30-median3@1"
   }
 }

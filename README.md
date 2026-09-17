@@ -94,7 +94,7 @@ ODbL 釋出。完整說明見 [LICENSE](LICENSE)。
 ## 重新產生
 
 腳本不在這個 repo，在 [happy-path](https://github.com/FreddyCro/happy-path) 的
-`soft-island/scripts/` 與 `fgb-poc/scripts/`：
+`soft-island/scripts/` 與 `geodata/scripts/`：
 
 ```bash
 # 1. pbf 人工下載一次（見上方「資料來源」），放 temp/
@@ -102,7 +102,7 @@ ODbL 釋出。完整說明見 [LICENSE](LICENSE)。
 cd soft-island && node scripts/dem-to-grid.mjs
 # 3. pbf → 中間格式 → GeoJSONSeq → 帶索引的 FGB → 壓 DEM → manifest（含斷言）
 node scripts/pbf-to-intermediate.mjs --in ../temp/taiwan-260914.osm.pbf --out ../temp/tw-intermediate
-cd ../fgb-poc
+cd ../geodata
 node scripts/to-geojsonseq.mjs --ndjson-dir ../temp/tw-intermediate --out build/geojsonl-tw
 node scripts/to-fgb.mjs --in build/geojsonl-tw --out public/data
 node scripts/pack-dem.mjs
