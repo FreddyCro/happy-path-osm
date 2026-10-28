@@ -1,0 +1,22 @@
+{
+  "source": "taiwan-260914.osm.pbf",
+  "sample": null,
+  "coverage": [
+    119.3,
+    21.9034,
+    122.0035,
+    25.4
+  ],
+  "places": 76733,
+  "placesNoDistrict": 203,
+  "placesOutOfCoverage": 1126,
+  "streets": 37906,
+  "streetNames": 24345,
+  "districts": 369,
+  "addresses": 4656559,
+  "addressesNoDistrict": 5,
+  "addressesOutOfCoverage": 11862,
+  "dirtyStreets": 60,
+  "shards": 354,
+  "seconds": 176
+}
